@@ -1,0 +1,23 @@
+// Check that the standalone view renders and every visible action is wired.
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'),'utf8'));
+assert.equal(catalog.length,1,'The repository must run exactly its own project.');
+globalThis.document={addEventListener(){}};
+await import('../web/project.js');
+const {ui}=await import('../web/lib.js');
+ui.catalog=catalog;ui.project=catalog[0];
+ui.state=JSON.parse(fs.readFileSync(path.join(root,'data/sample-state.json'),'utf8'));
+const view=ui.views[ui.project.id];assert.ok(view,'Project view was registered.');
+for(const key of ['title','description','help','scope'])assert.ok(view.meta[key],`Missing ${key}`);
+const html=view.render(ui.state),metrics=view.metrics(ui.state);
+assert.ok(html.length>700,'The workspace rendered its actual content.');
+assert.ok(!/(?:undefined|\[object Object\]|NaN)/.test(html+metrics),'No broken interpolation.');
+const actions=[...html.matchAll(/data-action="([^"]+)"/g)].map(m=>m[1]);
+for(const action of actions.filter(x=>!x.startsWith('_')))assert.equal(typeof view.actions[action],'function',`Unwired action: ${action}`);
+const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(m=>m[1]);
+assert.equal(new Set(ids).size,ids.length,'Form and visualization IDs must be unique.');
+console.log(JSON.stringify({project:ui.project.id,rendered:true,wiredActions:new Set(actions).size,uniqueIds:ids.length,standaloneImports:true}));

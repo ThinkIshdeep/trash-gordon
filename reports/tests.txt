@@ -1,0 +1,21 @@
+test_all_project_states (test_api.APITests.test_all_project_states) ... ok
+test_catalog (test_api.APITests.test_catalog) ... ok
+test_cross_origin_write_rejected (test_api.APITests.test_cross_origin_write_rejected) ... ok
+test_export_valid_json (test_api.APITests.test_export_valid_json) ... ok
+test_invalid_operation_rejected (test_api.APITests.test_invalid_operation_rejected) ... ok
+test_readiness (test_api.APITests.test_readiness) ... ok
+test_runs_available (test_api.APITests.test_runs_available) ... ok
+test_static_path_escape_blocked (test_api.APITests.test_static_path_escape_blocked) ... ok
+test_astar_impossible (test_domain.CoreTests.test_astar_impossible) ... ok
+test_astar_routes_around_wall (test_domain.CoreTests.test_astar_routes_around_wall) ... ok
+test_json_serialization (test_domain.CoreTests.test_json_serialization) ... ok
+test_complete_bag_sequence (test_domain.RobotTests.test_complete_bag_sequence) ... ok
+test_dynamic_replan (test_domain.RobotTests.test_dynamic_replan) ... ok
+test_here_grounding (test_domain.RobotTests.test_here_grounding) ... ok
+test_motion_interlock (test_domain.RobotTests.test_motion_interlock) ... ok
+test_stop_clears_path (test_domain.RobotTests.test_stop_clears_path) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.528s
+
+OK

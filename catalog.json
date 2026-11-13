@@ -1,0 +1,11 @@
+[
+  {
+    "id": "trash-gordon",
+    "name": "Trash Gordon",
+    "category": "Spatial robotics",
+    "tagline": "A dustbin with a mission, a map, and a bag-service protocol.",
+    "accent": "#73d9d4",
+    "number": "05",
+    "module": "robot"
+  }
+]

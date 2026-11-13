@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "project": "trash-gordon",
+      "status": "passed",
+      "seconds": 0.012837727000260202,
+      "evaluation": {
+        "navigation_tasks": 20,
+        "successes": 20,
+        "collisions": 0,
+        "bag_motion_interlock": true,
+        "note": "Twenty seeded goal checks in the authored room; physical sensors, SLAM, sealing and inflation are not validated."
+      },
+      "additional": {}
+    }
+  ]
+}

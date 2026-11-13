@@ -1,0 +1,25 @@
+{
+  "release": "2.0.0",
+  "python_tests": 16,
+  "python_pass": true,
+  "javascript_parse_pass": true,
+  "view_render_and_action_wiring": {
+    "project": "trash-gordon",
+    "rendered": true,
+    "wiredActions": 9,
+    "uniqueIds": 4,
+    "standaloneImports": true
+  },
+  "mobile_viewport": {
+    "project": "trash-gordon",
+    "scrollWidth": 375,
+    "width": 375,
+    "heading": "Your rubbish has a chauffeur."
+  },
+  "platform": "Linux, Python 3.12, Chrome",
+  "browser_check": "Primary workflow exercised manually through the actual interface; see UI_GUIDE.md.",
+  "limitations": [
+    "No physical mobile device testing",
+    "Windows launcher and Docker execution not verified here"
+  ]
+}

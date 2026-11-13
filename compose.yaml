@@ -1,0 +1,12 @@
+services:
+  lab:
+    build: .
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - lab-state:/app/runtime
+    restart: unless-stopped
+    mem_limit: 2g
+    cpus: 2
+volumes:
+  lab-state:

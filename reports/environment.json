@@ -1,0 +1,7 @@
+{
+  "release": "2.0.0",
+  "python": "3.12",
+  "platform": "Linux",
+  "browser": "Chrome",
+  "offline_ui_assets": true
+}

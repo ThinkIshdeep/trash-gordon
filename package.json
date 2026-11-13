@@ -1,0 +1,11 @@
+{
+  "name": "trash-gordon",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-js.mjs",
+    "dev": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 app.py",
+    "check:ui": "node scripts/check-ui.mjs"
+  }
+}

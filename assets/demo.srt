@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:07,000
+Meet TG-01
+Orbit the robot model and inspect its battery, fill, navigation and mechanism states. The geometry renders offline.
+
+2
+00:00:07,000 --> 00:00:14,000
+Ground a room destination
+A named landmark or speaker marker grounds the command. The apartment scene shows the planned A* route.
+
+3
+00:00:14,000 --> 00:00:21,000
+Stop and inspect the lid
+The robot is stationary and accepts the lid action. Bag sealing and inflation remain explicit simulated mechanisms.
+

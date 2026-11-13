@@ -1,0 +1,24 @@
+name: Check project
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      LAB_QUIET: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m compileall -q lab app.py
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/evaluate_all.py
+      - run: node scripts/check-js.mjs
+      - run: node scripts/check-ui.mjs
